@@ -7,40 +7,38 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #4d82cb;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.SignupController">
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #039be5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.SignupController">
    <children>
-      <AnchorPane layoutY="77.0" prefHeight="322.0" prefWidth="700.0" style="-fx-background-color: #82b1ff;">
+      <AnchorPane layoutY="77.0" prefHeight="322.0" prefWidth="700.0" style="-fx-background-color: #e0e0e0;">
          <children>
             <JFXButton fx:id="signupButton" buttonType="RAISED" layoutX="299.0" layoutY="238.0" prefHeight="27.0" prefWidth="102.0" style="-fx-background-color: #616161;" text="Signup" textFill="WHITE">
                <font>
-                  <Font size="16.0" />
+                  <Font name="Georgia" size="16.0" />
                </font>
             </JFXButton>
-            <JFXTextField fx:id="fname" layoutX="204.0" layoutY="14.0" prefHeight="26.0" prefWidth="314.0" promptText="First Name">
+            <JFXTextField fx:id="fname" layoutX="204.0" layoutY="14.0" prefHeight="26.0" prefWidth="314.0" promptText="First Name" unFocusColor="#039be5">
                <font>
-                  <Font size="14.0" />
+                  <Font name="Georgia Bold" size="14.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="lname" layoutX="204.0" layoutY="67.0" prefHeight="26.0" prefWidth="314.0" promptText="Last Name">
+            <JFXTextField fx:id="lname" layoutX="204.0" layoutY="67.0" prefHeight="26.0" prefWidth="314.0" promptText="Last Name" unFocusColor="#039be5">
                <font>
-                  <Font size="14.0" />
+                  <Font name="Georgia Bold" size="14.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="uname" layoutX="204.0" layoutY="121.0" prefHeight="26.0" prefWidth="314.0" promptText="Username">
+            <JFXTextField fx:id="uname" layoutX="204.0" layoutY="121.0" prefHeight="26.0" prefWidth="314.0" promptText="Username" unFocusColor="#039be5">
                <font>
-                  <Font size="14.0" />
+                  <Font name="Georgia Bold" size="14.0" />
                </font>
             </JFXTextField>
-            <JFXPasswordField fx:id="pass" layoutX="204.0" layoutY="180.0" prefHeight="26.0" prefWidth="314.0" promptText="Password" />
+            <JFXPasswordField fx:id="pass" layoutX="204.0" layoutY="180.0" prefHeight="26.0" prefWidth="314.0" promptText="Password" unFocusColor="#039be5">
+               <font>
+                  <Font name="Georgia Bold" size="14.0" />
+               </font></JFXPasswordField>
          </children></AnchorPane>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="201.0" prefHeight="46.0" prefWidth="298.0" text="Hey There New User!" textAlignment="CENTER" textFill="WHITE">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="235.0" layoutY="14.0" prefHeight="40.0" prefWidth="230.0" text="Fill in the details to get started." textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="246.0" layoutY="42.0" prefHeight="30.0" prefWidth="210.0" text="Fill in the details to get started." textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
+            <Font name="Georgia Bold" size="14.0" />
          </font>
       </Label>
    </children>

@@ -6,34 +6,39 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #4d82cb;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #039be5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane layoutY="77.0" prefHeight="322.0" prefWidth="700.0" style="-fx-background-color: #82b1ff;">
+      <AnchorPane layoutY="76.0" prefHeight="322.0" prefWidth="700.0" style="-fx-background-color: #e0e0e0;">
          <children>
-            <ImageView fx:id="userviewAdd" fitHeight="63.0" fitWidth="59.0" layoutX="325.0" layoutY="211.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="userviewAdd" fitHeight="70.0" fitWidth="60.0" layoutX="320.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../assets/baseline-add_circle-black-48/2x/baseline_add_circle_black_48dp.png" />
+                  <Image url="@../assets/icons8-plus-96.png" />
                </image>
             </ImageView>
             <Label alignment="CENTER" layoutX="189.0" layoutY="129.0" prefHeight="63.0" prefWidth="322.0" text="No Tasks for Today, yet!">
                <font>
-                  <Font name="Comic Sans MS" size="18.0" />
+                  <Font name="Georgia" size="18.0" />
                </font>
             </Label>
          </children></AnchorPane>
-      <ImageView fitHeight="50.0" fitWidth="63.0" layoutX="636.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/sharp-face-black-48/2x/sharp_face_black_48dp.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="50.0" layoutX="14.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="242.0" layoutY="10.0" prefHeight="62.0" prefWidth="216.0" text="TheWEEK" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Georgia" size="30.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="62.0" fitWidth="60.0" layoutX="21.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/icons8-menu-filled-500.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="242.0" layoutY="14.0" prefHeight="62.0" prefWidth="216.0" text="Welcome User!" textAlignment="CENTER" textFill="WHITE">
+      <ImageView fitHeight="46.0" fitWidth="60.0" layoutX="633.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-user-96.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="username" alignment="CENTER" contentDisplay="CENTER" layoutX="626.0" layoutY="56.0" prefHeight="18.0" prefWidth="60.0" text="User">
          <font>
-            <Font size="30.0" />
+            <Font name="Georgia" size="14.0" />
          </font>
       </Label>
    </children>
