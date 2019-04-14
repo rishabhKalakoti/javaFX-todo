@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #4d82cb;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutY="77.0" prefHeight="322.0" prefWidth="700.0" style="-fx-background-color: #82b1ff;">
+         <children>
+            <ImageView fx:id="userviewAdd" fitHeight="63.0" fitWidth="63.0" layoutX="588.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/baseline-add_circle-black-48/2x/baseline_add_circle_black_48dp.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="189.0" layoutY="129.0" prefHeight="63.0" prefWidth="322.0" text="No Tasks for Today, yet!">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <ImageView fitHeight="50.0" fitWidth="63.0" layoutX="623.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/sharp-face-black-48/2x/sharp_face_black_48dp.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="63.0" layoutX="14.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-menu-filled-500.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
