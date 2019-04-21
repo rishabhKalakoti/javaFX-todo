@@ -5,13 +5,13 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="addNote" prefHeight="254.0" prefWidth="459.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="addNote" prefHeight="254.0" prefWidth="459.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.addTaskController">
    <children>
       <AnchorPane prefHeight="247.0" prefWidth="459.0">
          <children>
             <DatePicker fx:id="noteDate" layoutX="19.0" layoutY="173.0" prefHeight="26.0" prefWidth="418.0" promptText="Select Date" />
             <TextArea fx:id="noteDesc" layoutX="20.0" layoutY="8.0" prefHeight="159.0" prefWidth="418.0" promptText="Write the task descripton" />
-            <JFXButton fx:id="addBtn" layoutX="196.0" layoutY="207.0" text="Add Task" />
+            <JFXButton fx:id="addBtn" onMouseClicked="#addNoteFunc" layoutX="196.0" layoutY="207.0" text="Add Task" />
          </children>
       </AnchorPane>
    </children>

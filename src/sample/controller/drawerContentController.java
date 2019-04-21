@@ -6,6 +6,8 @@ import com.jfoenix.controls.JFXButton;
 
 import javafx.scene.layout.AnchorPane;
 
+import javafx.scene.input.MouseEvent;
+
 import javafx.scene.layout.VBox;
 
 public class drawerContentController {
@@ -21,5 +23,4 @@ public class drawerContentController {
 	private JFXButton labels;
 	@FXML
 	private JFXButton signout;
-
 }

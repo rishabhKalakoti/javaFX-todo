@@ -32,7 +32,7 @@ public class userviewController {
 
     @FXML
     private AnchorPane dataPane;
-
+    
     @FXML
     private JFXDrawer drawer;
 
@@ -78,16 +78,10 @@ public class userviewController {
     }
     
     @FXML
-    void clickedAdd(MouseEvent event)  {
-    	System.out.println(dataPane);
-    	try {
-    	AnchorPane data = FXMLLoader.load(getClass().getResource( "/sample/view/addTask.fxml"));
+    void clickedAdd(MouseEvent event) throws Exception {
+    	//System.out.println(getClass().getResource( "/sample/view/addTask.fxml"));
+    	AnchorPane data= FXMLLoader.load(getClass().getResource( "/sample/view/addTask.fxml"));
 		dataPane.getChildren().setAll(data);
-    	}
-    	catch(Exception ex)
-    	{
-    		System.out.println("Error!");
-    	}
     }
     
     @FXML

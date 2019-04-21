@@ -64,6 +64,7 @@ public class LoginController {
 	    	
 	    	if(rs.next())
 	    	{
+	    		globals.username = loginUsername.getText();
 	    		AnchorPane pane = FXMLLoader.load(getClass().getResource( "/sample/view/userview.fxml"));
 	    		rootPane.getChildren().setAll(pane);
 	    		

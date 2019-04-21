@@ -2,11 +2,18 @@ package sample.controller;
 
 import javafx.fxml.FXML;
 
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+import com.jfoenix.controls.JFXButton;
+
 import javafx.scene.control.TextArea;
 
 import javafx.scene.layout.AnchorPane;
 
-import javafx.scene.layout.VBox;
+import javafx.scene.input.MouseEvent;
 
 import javafx.scene.control.DatePicker;
 
@@ -14,10 +21,23 @@ public class addTaskController {
 	@FXML
 	private AnchorPane addNote;
 	@FXML
-	private VBox addNoteVBox;
+	private DatePicker noteDate;
 	@FXML
 	private TextArea noteDesc;
 	@FXML
-	private DatePicker noteDate;
+	private JFXButton addBtn;
 
+	// Event Listener on JFXButton[#addBtn].onMouseClicked
+	@FXML
+	public void addNoteFunc(MouseEvent event) throws Exception{
+		
+		Class.forName("com.mysql.jdbc.Driver");
+    	Connection con= DriverManager.getConnection("jdbc:mysql://localhost/theweek","root","");
+    	
+    	Statement s = con.createStatement();
+    
+    	s.executeUpdate("insert into notes(user,description,date) values('"+ globals.username +"', '"+noteDesc.getText()+"', '"+noteDate.getValue()+"')");
+    	System.out.println("Note Inserted.");
+		
+	}
 }
