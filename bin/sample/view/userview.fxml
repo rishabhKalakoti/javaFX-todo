@@ -1,45 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #039be5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="rootPane" fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #039be5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.userviewController">
    <children>
-      <AnchorPane layoutY="76.0" prefHeight="322.0" prefWidth="700.0" style="-fx-background-color: #e0e0e0;">
+      <AnchorPane id="pane" fx:id="holderPane" layoutY="76.0" prefHeight="322.0" prefWidth="700.0" style="-fx-background-color: #e0e0e0;">
          <children>
-            <ImageView fx:id="userviewAdd" fitHeight="70.0" fitWidth="60.0" layoutX="320.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
+            <AnchorPane fx:id="dataPane" layoutX="231.0" prefHeight="242.0" prefWidth="469.0" />
+            <JFXDrawer id="drawer" fx:id="drawer" layoutY="-78.0" prefHeight="400.0" prefWidth="200.0" />
+            <ImageView fx:id="userviewAdd" fitHeight="70.0" fitWidth="60.0" layoutX="626.0" layoutY="255.0" onMouseClicked="#clickedAdd" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assets/icons8-plus-96.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" layoutX="189.0" layoutY="129.0" prefHeight="63.0" prefWidth="322.0" text="No Tasks for Today, yet!">
-               <font>
-                  <Font name="Georgia" size="18.0" />
-               </font>
-            </Label>
-         </children></AnchorPane>
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" />
+         </effect></AnchorPane>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="242.0" layoutY="10.0" prefHeight="62.0" prefWidth="216.0" text="TheWEEK" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Georgia" size="30.0" />
          </font>
       </Label>
-      <ImageView fitHeight="62.0" fitWidth="60.0" layoutX="21.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="profile" fitHeight="38.0" fitWidth="36.0" layoutX="650.0" layoutY="21.0" onMouseClicked="#clickProfile" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assets/icons8-menu-filled-500.png" />
+            <Image url="@../assets/icons8-user-96_unclicked.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="46.0" fitWidth="60.0" layoutX="633.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/icons8-user-96.png" />
-         </image>
-      </ImageView>
-      <Label fx:id="username" alignment="CENTER" contentDisplay="CENTER" layoutX="626.0" layoutY="56.0" prefHeight="18.0" prefWidth="60.0" text="User">
+      <Label fx:id="username" alignment="CENTER" contentDisplay="CENTER" layoutX="638.0" layoutY="56.0" prefHeight="18.0" prefWidth="60.0" text="Profile">
          <font>
-            <Font name="Georgia" size="14.0" />
+            <Font name="Georgia" size="12.0" />
          </font>
       </Label>
+      <JFXHamburger id="ham1" fx:id="ham1" layoutX="14.0" layoutY="23.0" onMouseClicked="#clickedHam" prefHeight="36.0" prefWidth="36.0" />
    </children>
 </AnchorPane>

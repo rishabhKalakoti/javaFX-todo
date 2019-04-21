@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #039be5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.profileController">
+   <children>
+      <AnchorPane layoutY="76.0" prefHeight="322.0" prefWidth="700.0" style="-fx-background-color: #e0e0e0;">
+         <children>
+            <ImageView fx:id="userviewAdd" fitHeight="70.0" fitWidth="60.0" layoutX="320.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons8-plus-96.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="189.0" layoutY="129.0" prefHeight="63.0" prefWidth="322.0" text="No Tasks for Today, yet!">
+               <font>
+                  <Font name="Georgia" size="18.0" />
+               </font>
+            </Label>
+            <JFXButton buttonType="RAISED" layoutX="634.0" layoutY="10.0" onAction="#signout" prefHeight="26.0" prefWidth="60.0" style="-fx-background-color: #039be5;" text="Signout">
+               <font>
+                  <Font name="Georgia" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="634.0" layoutY="47.0" prefHeight="26.0" prefWidth="60.0" style="-fx-background-color: #039be5;" text="Settings">
+               <font>
+                  <Font name="Georgia" size="12.0" />
+               </font>
+            </JFXButton>
+         </children></AnchorPane>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="242.0" layoutY="10.0" prefHeight="62.0" prefWidth="216.0" text="TheWEEK" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Georgia" size="30.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="clickprofile" fitHeight="38.0" fitWidth="36.0" layoutX="650.0" layoutY="21.0" onMouseClicked="#clickProfile" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-user-96_clicked.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="username" alignment="CENTER" contentDisplay="CENTER" layoutX="638.0" layoutY="56.0" prefHeight="18.0" prefWidth="60.0" text="Profile">
+         <font>
+            <Font name="Georgia" size="12.0" />
+         </font>
+      </Label>
+      <JFXHamburger fx:id="menu" layoutX="14.0" layoutY="23.0" prefHeight="36.0" prefWidth="30.0" />
+   </children>
+</AnchorPane>

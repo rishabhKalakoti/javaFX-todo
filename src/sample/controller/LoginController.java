@@ -3,7 +3,13 @@ import com.jfoenix.controls.JFXButton;
 
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.validation.RequiredFieldValidator;
+
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -35,10 +41,28 @@ public class LoginController {
 
 	    @FXML
 	    private JFXButton loginSignupButton;
-	    
+	    @FXML
+	    public void initialize()
+	    {
+	    	RequiredFieldValidator validator = new RequiredFieldValidator();
+	    	loginUsername.getValidators().add(validator);
+	    	loginPassword.getValidators().add(validator);
+	    	validator.setMessage("NO INPUT");
+	    	
+	    }
 	    public void Login(ActionEvent event) throws Exception
 	    {
-	    	if(loginUsername.getText().equals("superuser") && loginPassword.getText().equals("pass") )
+	    	loginUsername.validate();
+	    	loginPassword.validate();
+	    	Class.forName("com.mysql.jdbc.Driver");
+	    	//System.out.println("Ok");
+	    	Connection con= DriverManager.getConnection("jdbc:mysql://localhost/theweek","root","");
+	    	//System.out.println("Ok");
+	    	Statement s = con.createStatement();
+	    	
+	    	ResultSet rs = s.executeQuery("select * from users where uname='"+loginUsername.getText()+"' and pass='"+loginPassword.getText()+"'");
+	    	
+	    	if(rs.next())
 	    	{
 	    		AnchorPane pane = FXMLLoader.load(getClass().getResource( "/sample/view/userview.fxml"));
 	    		rootPane.getChildren().setAll(pane);
@@ -49,6 +73,12 @@ public class LoginController {
 	    		System.out.println("Login Failed");
 	    	}
 	    	
+	    }
+	    
+	    public void GoToSignup(ActionEvent event) throws Exception
+	    {
+	    	AnchorPane pane = FXMLLoader.load(getClass().getResource( "/sample/view/Signup.fxml"));
+    		rootPane.getChildren().setAll(pane);
 	    }
 	    
 	       
