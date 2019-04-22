@@ -29,16 +29,6 @@
             <Font name="Georgia" size="30.0" />
          </font>
       </Label>
-      <ImageView fx:id="profile" fitHeight="38.0" fitWidth="36.0" layoutX="650.0" layoutY="21.0" onMouseClicked="#clickProfile" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/icons8-user-96_unclicked.png" />
-         </image>
-      </ImageView>
-      <Label fx:id="username" alignment="CENTER" contentDisplay="CENTER" layoutX="638.0" layoutY="56.0" prefHeight="18.0" prefWidth="60.0" text="Profile">
-         <font>
-            <Font name="Georgia" size="12.0" />
-         </font>
-      </Label>
       <JFXHamburger id="ham1" fx:id="ham1" layoutX="14.0" layoutY="23.0" onMouseClicked="#clickedHam" prefHeight="36.0" prefWidth="36.0" />
    </children>
 </AnchorPane>

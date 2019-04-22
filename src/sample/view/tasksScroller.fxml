@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="scrollPane" prefHeight="249.0" prefWidth="505.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+   <children>
+      <JFXScrollPane fx:id="scroll" layoutX="-1.0" prefHeight="224.0" prefWidth="506.0" />
+   </children>
+</AnchorPane>
