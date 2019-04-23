@@ -54,7 +54,7 @@ public class LoginController {
 	    {
 	    	loginUsername.validate();
 	    	loginPassword.validate();
-	    	Class.forName("com.mysql.jdbc.Driver");
+	    	Class.forName("com.mysql.cj.jdbc.Driver");
 	    	//System.out.println("Ok");
 	    	Connection con= DriverManager.getConnection("jdbc:mysql://localhost/theweek","root","");
 	    	//System.out.println("Ok");

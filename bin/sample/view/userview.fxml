@@ -13,9 +13,26 @@
    <children>
       <AnchorPane id="pane" fx:id="holderPane" layoutY="76.0" prefHeight="322.0" prefWidth="700.0" style="-fx-background-color: #e0e0e0;">
          <children>
-            <AnchorPane id="dataPane" fx:id="dataPane" layoutX="203.0" layoutY="-1.0" prefHeight="258.0" prefWidth="498.0" />
-            <JFXDrawer id="drawer" fx:id="drawer" layoutY="-78.0" prefHeight="400.0" prefWidth="200.0" />
-            <ImageView fx:id="userviewAdd" fitHeight="70.0" fitWidth="60.0" layoutX="626.0" layoutY="255.0" onMouseClicked="#clickedAdd" pickOnBounds="true" preserveRatio="true">
+            <AnchorPane id="dataPane" fx:id="dataPane" layoutX="139.0" layoutY="14.0" prefHeight="258.0" prefWidth="421.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="42.0" prefHeight="54.0" prefWidth="410.0" text="Welcome to TheWeek." textAlignment="CENTER">
+                     <font>
+                        <Font name="Georgia" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="80.0" prefHeight="54.0" prefWidth="410.0" text="Here you can manage your TODOs." textAlignment="CENTER">
+                     <font>
+                        <Font name="Georgia" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="120.0" prefHeight="54.0" prefWidth="410.0" text="Time to get Productive :)" textAlignment="CENTER">
+                     <font>
+                        <Font name="Georgia" size="14.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+            <JFXDrawer id="drawer" fx:id="drawer" layoutY="-78.0" prefHeight="400.0" prefWidth="206.0" />
+            <ImageView fx:id="userviewAdd" fitHeight="70.0" fitWidth="60.0" layoutX="628.0" layoutY="257.0" onMouseClicked="#clickedAdd" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assets/icons8-plus-96.png" />
                </image>

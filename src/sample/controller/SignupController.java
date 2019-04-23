@@ -53,12 +53,12 @@ public class SignupController {
 	    }
     public void Signup(ActionEvent event) throws Exception
     {
-    	Class.forName("com.mysql.jdbc.Driver");
+    	Class.forName("com.mysql.cj.jdbc.Driver");
     	Connection con= DriverManager.getConnection("jdbc:mysql://localhost/theweek","root","");
     	
     	Statement s = con.createStatement();
-    	
-    	int i = s.executeUpdate("insert into users values('"+fname.getText()+"' , '"+lname.getText()+"', '"+uname.getText()+"', '"+pass.getText()+"')");
+    	System.out.println("insert into users values('"+fname.getText()+"' , '"+lname.getText()+"', '"+uname.getText()+"', '"+pass.getText()+"')");
+    	s.executeUpdate("insert into users values('"+fname.getText()+"' , '"+lname.getText()+"', '"+uname.getText()+"', '"+pass.getText()+"')");
     	AnchorPane pane = FXMLLoader.load(getClass().getResource( "/sample/view/Login.fxml"));
 		rootPane.getChildren().setAll(pane);
     }

@@ -4,14 +4,21 @@
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="addNote" prefHeight="254.0" prefWidth="459.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.addTaskController">
    <children>
       <AnchorPane prefHeight="247.0" prefWidth="459.0">
          <children>
-            <JFXButton fx:id="addBtn" buttonType="RAISED" layoutX="196.0" layoutY="220.0" onMouseClicked="#addNoteFunc" text="Add Task" />
-            <JFXTextArea fx:id="noteDesc" labelFloat="true" layoutX="19.0" layoutY="22.0" prefHeight="138.0" prefWidth="418.0" promptText="Enter the task description..." />
-            <JFXDatePicker fx:id="noteDate" layoutX="20.0" layoutY="179.0" prefHeight="28.0" prefWidth="418.0" />
+            <JFXButton fx:id="addBtn" buttonType="RAISED" layoutX="190.0" layoutY="206.0" onMouseClicked="#addNoteFunc" style="-fx-background-color: #039be5;" text="Add Task">
+               <font>
+                  <Font name="Georgia" size="14.0" />
+               </font></JFXButton>
+            <JFXTextArea fx:id="noteDesc" focusColor="#039be5" labelFloat="true" layoutX="20.0" layoutY="33.0" prefHeight="106.0" prefWidth="418.0" promptText="Enter the task description..." style="-fx-background-color: #cfd8dc;" unFocusColor="#fffbfb">
+               <font>
+                  <Font name="Georgia Italic" size="14.0" />
+               </font></JFXTextArea>
+            <JFXDatePicker fx:id="noteDate" defaultColor="#039be5" layoutX="20.0" layoutY="161.0" prefHeight="28.0" prefWidth="418.0" promptText="Select Date" style="-fx-background-color: #cfd8dc;" />
          </children>
       </AnchorPane>
    </children>

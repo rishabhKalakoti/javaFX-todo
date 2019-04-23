@@ -8,12 +8,16 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.logging.Logger;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXButton.ButtonType;
 import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
+import com.jfoenix.controls.JFXTextArea;
+import com.jfoenix.skins.JFXButtonSkin;
 import com.jfoenix.transitions.hamburger.HamburgerSlideCloseTransition;
 
 import javafx.event.ActionEvent;
@@ -57,7 +61,9 @@ public class userviewController {
 
     @FXML
     private JFXButton allTasks;
-    
+
+    @FXML
+    private JFXButton week;
     @FXML
     private JFXButton signout;
     
@@ -147,6 +153,7 @@ public class userviewController {
     	
     	// -----------
     	VBox vb = new VBox();
+    	vb.setPrefWidth(460);
     	Statement s = con.createStatement();
     	ResultSet rs = s.executeQuery("select * from notes where user='" + globals.username + "' order by date");
     	// HBox outer[] = new HBox[news.size()];
@@ -154,18 +161,25 @@ public class userviewController {
     	{
     		System.out.println(rs.getString(1)+rs.getString(2)+rs.getString(3));
     		HBox hb = new HBox();
-    		Text l = new Text();
+    		hb.setPrefWidth(460);
+    		Label l = new Label();
     		l.setText(rs.getString(3) + " (" + rs.getString(4) + ")");
-    		l.setWrappingWidth(350);
+    		l.setPrefWidth(350);
+    		l.setPrefHeight(28);
+    		//l.setEditable(false);
+    		l.setStyle("-fx-font-family:Georgia;-fx-font-size: 14px;");
+    		l.setFocusTraversable(false);
     		hb.getChildren().add(l);
-    		Button rem = new Button();
+    		JFXButton rem = new JFXButton();
+    		rem.setStyle("-fx-background-color: #039be5; -fx-font-family: Georgia; -fx-font-size:14px;");
     		rem.setText("Remove");
+    		rem.setButtonType(ButtonType.RAISED);
     		String id = rs.getString(1);
     		rem.setUserData(id);
     		rem.setOnMouseClicked((removeFromList));
     		hb.setSpacing(5);
             hb.setPadding(new Insets(5, 5, 5, 5));
-            hb.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, null, new BorderWidths(1))));
+            hb.setBorder(new Border(new BorderStroke(Color.rgb(3,155,229), BorderStrokeStyle.SOLID, null, new BorderWidths(1))));
     		hb.getChildren().add(rem);
     		if(dateFormat.format(date).compareTo(rs.getString(4)) > 0)
     			vb.getChildren().add(new Text("--------------------PENDING--------------------"));
@@ -200,6 +214,7 @@ public class userviewController {
     	
     	// -----------
     	VBox vb = new VBox();
+    	vb.setPrefWidth(450);
     	Statement s = con.createStatement();
     	DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     	Date date = new Date();
@@ -211,18 +226,25 @@ public class userviewController {
     	{
     		//System.out.println(rs.getString(1)+rs.getString(2)+rs.getString(3));
     		HBox hb = new HBox();
-    		Text l = new Text();
+    		hb.setPrefWidth(460);
+    		Label l = new Label();
     		l.setText(rs.getString(3) + " (" + rs.getString(4) + ")");
-    		l.setWrappingWidth(350);
+    		l.setPrefWidth(350);
+    		l.setPrefHeight(28);
+    		//l.setEditable(false);
+    		l.setFocusTraversable(false);
+    		l.setStyle(" -fx-font-family:Georgia; -fx-font-size: 14px;");
     		hb.getChildren().add(l);
-    		Button rem = new Button();
+    		JFXButton rem = new JFXButton();
     		rem.setText("Remove");
+    		rem.setStyle("-fx-background-color: #039be5; -fx-font-family: Georgia; -fx-font-size:14px;");
+    		rem.setButtonType(ButtonType.RAISED);
     		String id = rs.getString(1);
     		rem.setUserData(id);
     		rem.setOnMouseClicked((removeFromList));
     		hb.setSpacing(5);
             hb.setPadding(new Insets(5, 5, 5, 5));
-            hb.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, null, new BorderWidths(1))));
+            hb.setBorder(new Border(new BorderStroke(Color.rgb(3,155,229), BorderStrokeStyle.SOLID, null, new BorderWidths(1))));
     		hb.getChildren().add(rem);
     		System.out.println(dateFormat.format(date));
     		
@@ -244,6 +266,78 @@ public class userviewController {
     	dataPane.getChildren().setAll(scroll);
 
     }
+    @FXML
+    void loadWeek(ActionEvent event) throws Exception {
+    	Class.forName("com.mysql.jdbc.Driver");
+    	Connection con= DriverManager.getConnection("jdbc:mysql://localhost/theweek","root","");
+    	
+    	// -----------
+    	VBox vb = new VBox();
+    	vb.setPrefWidth(450);
+    	Statement s = con.createStatement();
+    	DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    	Date date = new Date();
+    	Calendar c = Calendar.getInstance();
+    	try{
+    	   //Setting the date to the given date
+    	   c.setTime(date);
+    	}catch(Exception e){
+    		e.printStackTrace();
+    	 }
+    	c.add(Calendar.DAY_OF_MONTH, 7);  
+    	//Date after adding the days to the given date
+    	String newDate = dateFormat.format(c.getTime());  
+    	//System.out.println(dateFormat.format(date));
+    	//System.out.println(newDate);
+    	ResultSet rs = s.executeQuery("select * from notes where user='" + globals.username + "' and date<'"+
+    			newDate +"' and date>='" + 
+    			dateFormat.format(date) +"' order by date");
+    	
+    	while(rs.next())
+    	{
+    		//System.out.println(rs.getString(1)+rs.getString(2)+rs.getString(3));
+    		HBox hb = new HBox();
+    		hb.setPrefWidth(460);
+    		Label l = new Label();
+    		l.setText(rs.getString(3) + " (" + rs.getString(4) + ")");
+    		l.setPrefWidth(350);
+    		l.setPrefHeight(28);
+    		//l.setEditable(false);
+    		l.setFocusTraversable(false);
+    		l.setStyle(" -fx-font-family:Georgia; -fx-font-size: 14px;");
+    		hb.getChildren().add(l);
+    		JFXButton rem = new JFXButton();
+    		rem.setText("Remove");
+    		rem.setStyle("-fx-background-color: #039be5; -fx-font-family: Georgia; -fx-font-size:14px;");
+    		rem.setButtonType(ButtonType.RAISED);
+    		String id = rs.getString(1);
+    		rem.setUserData(id);
+    		rem.setOnMouseClicked((removeFromList));
+    		hb.setSpacing(5);
+            hb.setPadding(new Insets(5, 5, 5, 5));
+            hb.setBorder(new Border(new BorderStroke(Color.rgb(3,155,229), BorderStrokeStyle.SOLID, null, new BorderWidths(1))));
+    		hb.getChildren().add(rem);
+    		System.out.println(dateFormat.format(date));
+    		
+    		if(dateFormat.format(date).compareTo(rs.getString(4)) > 0)
+    			vb.getChildren().add(new Text("--------------------PENDING--------------------"));
+    		vb.getChildren().add(hb);
+    		
+    	}
+    	ScrollPane scroll = new ScrollPane();
+
+    	scroll.setMaxHeight(250);
+    	scroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+    	scroll.setMinWidth(460);
+    	vb.setMaxWidth(450);
+    	scroll.setContent(vb);
+    	AnchorPane dataPane =(AnchorPane) box.getScene().lookup("#dataPane");
+    	System.out.println(scroll);
+    	System.out.println(dataPane);
+    	dataPane.getChildren().setAll(scroll);
+
+    }
+
     @FXML
     void signout(ActionEvent event) throws Exception {
     	AnchorPane pane = FXMLLoader.load(getClass().getResource( "/sample/view/login.fxml"));
