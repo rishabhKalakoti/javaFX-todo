@@ -1,5 +1,5 @@
 package sample.controller;
-
+import sample.model.*;
 import java.io.*;
 import java.io.IOException;
 import java.sql.Connection;

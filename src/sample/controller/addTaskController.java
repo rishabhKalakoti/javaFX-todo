@@ -1,5 +1,5 @@
 package sample.controller;
-
+import sample.model.*;
 import javafx.fxml.FXML;
 
 

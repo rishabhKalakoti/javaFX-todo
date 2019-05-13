@@ -1,4 +1,5 @@
 package sample.controller;
+import sample.model.*;
 import java.net.URL;
 
 import java.sql.Connection;

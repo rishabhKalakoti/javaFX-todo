@@ -1,5 +1,5 @@
 package sample.controller;
-
+import sample.model.*;
 import sample.controller.userviewController; 
 import java.util.*;
 import java.sql.Connection;

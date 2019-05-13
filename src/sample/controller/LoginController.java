@@ -1,4 +1,5 @@
 package sample.controller;
+import sample.model.*;
 import com.jfoenix.controls.JFXButton;
 
 import com.jfoenix.controls.JFXPasswordField;
